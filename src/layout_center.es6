@@ -4,7 +4,7 @@
 		renderStart () {
 			
 			this.nodes = createNode(
-				'display: table; min-height: 100%; width: 100%; overflow: auto'
+				'display: table; height: 100%; width: 100%; overflow: auto'
 				,createNode(
 					'display: table-cell; vertical-align: middle'
 					, createNode(
