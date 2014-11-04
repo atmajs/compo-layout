@@ -1,0 +1,8 @@
+UTest({
+	'test center' () {
+		return UTest
+			.server
+			.request('/examples/center.html')
+			.done(checkExample);
+	}
+})

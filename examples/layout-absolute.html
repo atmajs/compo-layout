@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src='/bower_components/maskjs/lib/mask.js'></script>
+	<script src='/lib/layout.js'></script>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+		
+		.red 	{ background: red; 		}
+		.yellow { background: yellow; 	}
+		.green 	{ background: green; 	}
+		.cyan 	{ background: cyan; 	}
+		.purple { background: purple; 	}
+		.blue 	{ background: blue; 	}
+		
+	</style>
+	<script type='text/mask' data-run="true">
+		l:cols:absolute (15%, flex) {
+			.red test-width='100vw * 0.15' {
+				.header > 'SideBar [15%]'
+			}
+			
+			.green test-width='100vw * 0.85' {
+				
+				l:rows:absolute (50px, flex, auto) {
+					.yellow test-height='50px' > 'Header [50px]'
+					.cyan 	test-height='100vh - 50px - 100px' > 'Content [flex]'
+					.purple test-height='100px' >
+						span style='line-height: 100px' >
+							'Footer [auto]'
+				}
+			} 
+		}
+	</script>
+	
+	<script type='application/javascript'>
+		mask.run();
+	</script>
+</body>
+</html>

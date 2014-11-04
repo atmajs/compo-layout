@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src='/bower_components/maskjs/lib/mask.js'></script>
+	<script src='/lib/layout.js'></script>
+	<style>
+		body, html {
+			height: 100%;
+			margin: 0;
+		}
+		
+		.red 	{ background: red; 		}
+		.yellow { background: yellow; 	}
+		.green 	{ background: green; 	}
+		.cyan 	{ background: cyan; 	}
+		.purple { background: purple; 	}
+		.blue 	{ background: blue; 	}
+		
+		.container {
+			width: 400px;
+			height: 400px;
+			float: left;
+			margin: 5px;
+		}
+		.h50 { height: 50px; }
+		.w50 { width : 50px; }
+	</style>
+	<script type='text/mask' data-run="true">
+		
+		.container >
+			l:cols:absolute (25%, flex) {
+				.red test-width='100px' {
+					.header > 'SideBar [25%]'
+				}
+				.yellow {
+				
+					l:rows:absolute (50px, flex, auto) {
+						.geen test-height='50px'  > 'Header [50px]'
+						.cyan test-height='250px' > 'Content [flex]'
+						.blue test-height='100px' >
+							span style='line-height: 100px' > 'Footer [auto]'
+					}
+				}
+			}
+		
+		.container > l:rows:absolute (100px, flex, flex, flex) {
+			.red test-height='100px' > 'A [100px]'
+			.yellow test-height='100px' > 'A flex [100px]'
+			.green test-height='100px' > 'A flex [100px]'
+			.cyan test-height='100px' > 'A flex [100px]'
+		}
+		
+		.container > l:rows:absolute (auto, auto, auto, flex) {
+			.red test-height='50px' > .h50 > 'auto [50px]'
+			.yellow test-height='50px' > .h50 > 'auto [50px]'
+			.green test-height='50px' > .h50 > 'auto [50px]'
+			.cyan test-height='250px' {
+				l:cols:absolute (100px, flex, auto) {
+					.purple test-width=100 > 'C [100px]'
+					.blue test-width=250 > 'C [100px]'
+					.red test-width=50 > .w50 > 'C [50px]'
+				}
+			}
+		}
+	</script>
+	
+	<script type='application/javascript'>
+		mask.run();
+	</script>
+</body>
+</html>

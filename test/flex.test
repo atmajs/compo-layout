@@ -1,0 +1,23 @@
+UTest({
+	$config: {
+		timeout: 2000
+	},
+	'test layout rows' () {
+		return UTest
+			.server
+			.request('/examples/layout-flex-rows.html')
+			.done(checkExample);
+	},
+	'test layout cols' () {
+		return UTest
+			.server
+			.request('/examples/layout-flex-cols.html')
+			.done(checkExample);
+	},
+	'test layout' () {
+		return UTest
+			.server
+			.request('/examples/layout-flex.html')
+			.done(checkExample);
+	}
+})

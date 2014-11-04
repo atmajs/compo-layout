@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+	<script src='/bower_components/maskjs/lib/mask.js'></script>
+	<script src='/lib/layout.js'></script>
+	<style>
+		html, body { height: 100%; margin: 0; }
+		.foo-container {
+			width: 50%;
+			height: 50px;
+			min-width: 100px;
+			background: green;
+		}
+	</style>
+	<script type='text/mask' data-run="true">
+		
+		l:center .foo-container
+			test-width	= '100vw * .5'
+			test-left	= '(100vw - (100vw * .5))/2'
+			test-height	= '50px'
+			test-top  	= '(100vh - 50px) / 2'
+			{
+				span > 'hello'
+			}
+		
+	</script>
+	<script type='application/javascript'>
+		mask.run();
+	</script>
+</body>
+</html>
