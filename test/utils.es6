@@ -20,7 +20,7 @@ function checkExampleDelegate(type) {
 		var expr = $(el).attr('test-' + type);
 		var test = evaluateExpr(expr, el);
 		
-		eq_(actual, test, `${type} == ${test}`);
+		eq_(actual, test, `Type: ${type}; Expr: ${expr}; Actual: ${actual};  Expect: ${test}`);
 	};
 }
 
