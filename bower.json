@@ -1,12 +1,12 @@
 {
     "name": "compo-layout",
-    "version": "0.8.3",
-    "homepage": "https://github.com/atmajs/compo-lazy",
+    "version": "0.8.4",
+    "homepage": "https://github.com/atmajs/compo-layout",
     "authors": [
         "Alex Kit <alex.kit@atmajs.com>"
     ],
     "description": "MaskJS Layout components (Atma.js)",
-    "main": "lib/lazy.js",
+    "main": "lib/layout.js",
     "license": "MIT",
     "ignore": [
         "**/.*",
