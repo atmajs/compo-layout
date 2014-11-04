@@ -3,9 +3,6 @@ var LayoutCompo = {
 	type: 'width|height',
 	layout: null,
 	resizerType: 'dynamic',
-	meta: {
-		mode: 'server'
-	},
 	attr: {
 		overflow: 'auto'
 	},

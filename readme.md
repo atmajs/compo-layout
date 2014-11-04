@@ -52,17 +52,17 @@ l:rows:flex (50px, flex, flex, auto) {
 Examples:
 
 ```scss
-l:rows:absolute (50px, flex, auto) {
+l:cols:absolute (50px, flex, auto) {
 	div { /*50px width*/ }
 	div { /*flexible width*/ }
 	div { /*width of the content*/}
 }
-l:rows:fluid (100px, flex, flex) {
+l:cols:fluid (100px, flex, flex) {
 	div { }
 	div { }
 	div { }
 }
-l:rows:flex (50px, flex, auto) {
+l:cols:flex (50px, flex, auto) {
 	div { }
 	div { }
 	div { }
