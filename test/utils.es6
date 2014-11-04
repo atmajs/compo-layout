@@ -34,11 +34,11 @@ var ActualResolver = {
 function evaluateExpr(size, el) {
 	size = size
 		.replace(/(\d+)vh/g, (full, vh) => {
-			var val = el.ownerDocument.documentElement.scrollHeight;
+			var val = el.ownerDocument.documentElement.offsetHeight;
 			return val * vh / 100;
 		})
 		.replace(/(\d+)vw/g, (full, vw) => {
-			var val = el.ownerDocument.documentElement.scrollWidth;
+			var val = el.ownerDocument.documentElement.offsetWidth;
 			return val * vw / 100;
 		})
 		.replace(/(\d+)px/g, (full, px) => {
