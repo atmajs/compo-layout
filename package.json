@@ -1,4 +1,14 @@
 {
+    "name": "compo-layout",
+    "version": "0.8.6",
+    "homepage": "https://github.com/atmajs/compo-layout",
+    "authors": [
+        "Alex Kit <alex.kit@atmajs.com>"
+    ],
+    "description": "MaskJS Layout components (Atma.js)",
+    "main": "lib/layout.js",
+    "license": "MIT",
+
     "devDependencies": {
         "atma": ">0.9.26",
         "atma-loader-traceur": ">0.0.0"

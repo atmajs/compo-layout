@@ -8,9 +8,10 @@ var LayoutCompo = {
 	},
 	slots: {
 		domInsert () {
-			if (this.layout == null) 
+			if (this.layout == null)
 				return;
-			
+
+			this.layout.ensureElement();
 			this.layout.checkReflowRequired()
 			this.layout.reflow()
 		},
@@ -21,11 +22,11 @@ var LayoutCompo = {
 			this.layout.reflow();
 		}
 	},
-	
+
 	renderStart () {
 		this.handleAttr_();
 		this.handleExpression_();
-		
+
 		var blocks = this.prepairBlocks_();
 		if (blocks == null) {
 			this.slots = null;
@@ -35,48 +36,48 @@ var LayoutCompo = {
 			};
 		}
 	},
-	
+
 	renderEnd (els, model, ctx, el) {
 		var blocks = this.scope && this.scope.$blocks;
-		if (blocks == null) 
+		if (blocks == null)
 			return;
-		
+
 		var [ container, elements ] =  this.resolveElements(
 			els, model, ctx, el
 		);
-		
+
 		this.layout = new this.LayoutController(
 			container
 			, elements
 			, blocks
 			, this.attr
 		);
-		
-		if (this.resizerType === 'dynamic') 
+
+		if (this.resizerType === 'dynamic')
 			ResizeListener.register(this.layout);
-		
+
 	},
-	
+
 	resolveElements (els) {
 		var container = els[0],
-			elements  = Array.prototype.slice.call(container.childNodes) 
+			elements  = Array.prototype.slice.call(container.childNodes)
 		return [ container, elements ];
 	},
-	
+
 	dispose () {
-		if (this.layout == null) 
+		if (this.layout == null)
 			return;
-		
+
 		this.layout.dispose();
 		ResizeListener.unregister(this.layout);
 	},
-	
+
 	handleExpression_ () {
-		if (this.expression == null) 
+		if (this.expression == null)
 			return;
-		
+
 		var { nodes, type, expression } = this;
-		
+
 		var sizes = expression.split(
 			expression.indexOf(',') === -1 ? ' ' : ','
 		);
@@ -85,7 +86,7 @@ var LayoutCompo = {
 			  `Expression for ${sizes.length}, but expected for ${nodes.length} elements. ${expression}`
 			);
 		}
-		
+
 		arr_each(nodes, (node, i) =>
 			node.attr[type] = sizes[i].trim()
 		);
@@ -97,7 +98,7 @@ var LayoutCompo = {
 			width  = 'min-' + width;
 			height = 'min-' + height;
 		}
-		
+
 		node_writeCss(this, width + ';' + height);
 	}
 };
