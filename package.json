@@ -11,24 +11,21 @@
 
     "devDependencies": {
         "atma": ">0.9.26",
-        "atma-loader-traceur": ">0.0.0"
+        "atma-loader-babel": ">0.0.0"
     },
     "scripts": {
         "test": "atma test"
     },
     "atma": {
         "plugins": [
-            "atma-loader-traceur"
+            "atma-loader-babel"
         ],
         "settings": {
-            "atma-loader-traceur": {
+            "atma-loader-babel": {
                 "extensions": [
                     "es6",
                     "test"
-                ],
-                "traceur": {
-                    "sourceMaps": false
-                }
+                ]
             }
         }
     }
