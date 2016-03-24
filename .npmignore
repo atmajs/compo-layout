@@ -1,0 +1,8 @@
+bower_components/
+builds/
+src/
+test/
+.gitignore
+.npmignore
+.travis.yml
+*.komodoproject

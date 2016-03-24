@@ -5,13 +5,10 @@
 			
 			this.nodes = createNode(
 				'display: table; height: 100%; width: 100%; overflow: auto'
-				,createNode(
-					'display: table-cell; vertical-align: middle'
-					, createNode(
-						'margin: 0 auto'
-						, this.nodes
-						, this.attr
-					)
+				, createNode(
+					'display: table-cell; vertical-align: middle; text-align:center'
+					, this.nodes
+					, this.attr
 				)
 			);
 		}

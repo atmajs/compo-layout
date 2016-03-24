@@ -6,7 +6,7 @@ mask.define('l:custom', mask.Compo({
 			this.reflow();
 		}
 	},
-	renderEnd: function(elements, model, ctx, container){
+	onRenderEnd: function(elements, model, ctx, container){
 		this.container = container;
 		this.elements = elements;
 		ResizeListener.register(this);
